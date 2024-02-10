@@ -1,0 +1,41 @@
+<template>
+    <div class="slds-p-left_medium">
+    <lightning-card title="Change message">
+    
+        <p>{greeting}</p>
+        <p>{welcome}</p>
+        <lightning-button variant="brand" label="Change Text" title="Change Text" 
+        icon-name="standard:assigned_resource" class="slds-m-left_x-small"
+        onclick={clickHandler}
+        ></lightning-button>
+    
+   </lightning-card>
+    </div>
+    <div>
+        <lightning-card title="Nested Private Object">
+        <p class="slds-p-left_medium"> {myDetails.fname},{myDetails.lname}</p>
+        <div class="'slds-var-p-around_small">
+            <lightning-button label="Change Name"
+            variant="brand"
+            onclick={clickHandler2}
+            ></lightning-button>
+        </div>
+        </lightning-card>
+    </div>
+    <div>
+        <lightning-card title="Array">
+        <p class="slds-p-left_medium"> {myArray}</p>
+        <div class="'slds-var-p-around_small">
+            <lightning-button label="Change Array values"
+            variant="brand"
+            onclick={clickHandler3}
+            ></lightning-button>
+        </div>
+        </lightning-card>
+    </div>
+    <div>
+        <!-- Brand variant: Identifies the primary action in a group of buttons -->
+       
+
+    </div>
+</template>
