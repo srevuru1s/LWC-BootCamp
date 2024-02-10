@@ -15,7 +15,6 @@ export default class Calculator extends LightningElement {
         } else {
             this.number2 = event.target.value;
         }        
-
     };
 
     calculateInput(event) {
