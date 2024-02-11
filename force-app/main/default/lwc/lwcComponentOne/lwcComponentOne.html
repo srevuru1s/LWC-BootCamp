@@ -1,0 +1,43 @@
+<template>
+    <div class="slds-p-left_medium">
+
+        <lightning-card title="Change Message">
+
+            <p>{greeting}</p>
+            <p>{message}</p>
+            
+            <lightning-button variant="brand" label="Change Above Message"
+             icon-name="standard:assigned_resource" class="slds-m-left_x-small"
+             onclick={clickHandler1} 
+             ></lightning-button>           
+            
+        </lightning-card>
+    
+    </div>    
+    <div class="slds-p-left_medium">
+
+        <lightning-card title="@Track Decorator Use">
+
+            <p> {myDetails.fname}.{myDetails.lname}</p>
+
+            <lightning-button variant="brand" label="Hidden Message For You"
+            icon-name="standard:assigned_resource" class="slds-m-left_x-small"
+            onclick={clickHandler2} 
+            ></lightning-button>
+        
+        </lightning-card>
+
+    </div>
+
+    <div class="slds-p-left_x-large">
+
+        <lightning-card> 
+          <p>{myArray}</p>
+             <lightning-button variant="brand" label="@Track Array Button "
+                icon-name="standard:assigned_resource" class="slds-m-left_x-small"
+                onclick={clickHandler3} > 
+              </lightning-button>
+        </lightning-card>
+    </div>
+
+</template>
