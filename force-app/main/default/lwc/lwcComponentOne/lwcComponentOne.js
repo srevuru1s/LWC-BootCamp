@@ -2,22 +2,36 @@ import { LightningElement, track } from 'lwc';
 
 export default class LwcComponentOne extends LightningElement {
     //* Declaring the html
-    @track greeting = "Good Morning";
-    @track message  = "Nothing will stop to Learn";
+     greeting = "Good Morning";
+     message  = "Nothing will stop to Learn";
 
     clickHandler1(event) {
         this.greeting = "Namaskar Folks";
         this.message  = "Anything is possible by efforts";
     }
     //* Use of tract decorator with object
-    @track myDetails = {fname: "Sagar", lname: "Revuru"};
+     myDetails = {fname: "Sagar", lname: "Revuru"};
     clickHandler2(event) {
-        this.myDetails.fname = "Ava";
-        this.myDetails.lname = "Sagar Revuru";
+        this.myDetails =  {fname :"Ava1", lname :"Revuru1"};
+        
     }
     //* Use of tract decorator with array
-    @track myArray = [20,40,2021,2023];
+    myArray = [20,40,2021,2023];
     clickHandler3(event) {
         this.myArray = [...this.myArray,2026,2028];
     }
+
+    //* getter example
+    users = ['sagar', 'ava', 'hani'];
+    number1 = 20;
+    number2 = 30;
+
+    get firstuser() {
+
+        return this.users[0];
+    }
+    get multiply() {
+        return this.number1 * this.number2;
+    }
+
 }

@@ -1,43 +1,48 @@
 <template>
-    <div class="slds-p-left_medium">
+    
 
         <lightning-card title="Change Message">
-
-            <p>{greeting}</p>
-            <p>{message}</p>
+            <div class="slds-var-p-left_medium">
+                <p>{greeting}</p>
+                <p>{message}</p>
             
-            <lightning-button variant="brand" label="Change Above Message"
-             icon-name="standard:assigned_resource" class="slds-m-left_x-small"
-             onclick={clickHandler1} 
-             ></lightning-button>           
-            
+                <lightning-button variant="brand" label="Change Above Message"
+                icon-name="standard:assigned_resource" class="slds-var-m-left_x-small"
+                onclick={clickHandler1} 
+                ></lightning-button>           
+            </div>   
         </lightning-card>
     
-    </div>    
-    <div class="slds-p-left_medium">
+     
+    
 
-        <lightning-card title="@Track Decorator Use">
+        <lightning-card title="@Track Decorator Object">
+            <div class="slds-var-p-left_medium">
+                <p> {myDetails.fname}, {myDetails.lname}</p>
 
-            <p> {myDetails.fname}.{myDetails.lname}</p>
+                <lightning-button variant="brand" label="Hidden Message For You"
+                icon-name="standard:assigned_resource" class="slds-var-m-left_x-small"
+                onclick={clickHandler2} 
+                ></lightning-button>
+            </div>
+        </lightning-card>
+    
 
-            <lightning-button variant="brand" label="Hidden Message For You"
-            icon-name="standard:assigned_resource" class="slds-m-left_x-small"
-            onclick={clickHandler2} 
-            ></lightning-button>
+        <lightning-card title="@Track Decorator Array"> 
+            <div class="slds-var-p-left_x-large">
+                <p>{myArray}</p>
+                    <lightning-button variant="brand" label="@Track Array Button "
+                        icon-name="standard:assigned_resource" class="slds-var-m-left_x-small"
+                        onclick={clickHandler3} > 
+                    </lightning-button>
+            </div>
+        </lightning-card>
         
+        <lightning-card title="@Track Decorator Array"> 
+            <p>First user in the list : {firstuser}</p>
+            <p>{multiply}</p>
         </lightning-card>
-
-    </div>
-
-    <div class="slds-p-left_x-large">
-
-        <lightning-card> 
-          <p>{myArray}</p>
-             <lightning-button variant="brand" label="@Track Array Button "
-                icon-name="standard:assigned_resource" class="slds-m-left_x-small"
-                onclick={clickHandler3} > 
-              </lightning-button>
-        </lightning-card>
-    </div>
 
 </template>
+
+
