@@ -1,0 +1,19 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-16-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="This is slot parent component">
+        <div class="slds-var-p-around_medium">
+            <c-slot-child-component>
+                <p class="slds-text-color_success" slot="first">My Name is SF Tropper</p>
+                <P class="slds-text-color_error" slot="second">I love learning LWC</P>
+                <p slot="footer">I am a footer</p>
+            </c-slot-child-component>
+        </div>
+        
+    </lightning-card>
+</template>

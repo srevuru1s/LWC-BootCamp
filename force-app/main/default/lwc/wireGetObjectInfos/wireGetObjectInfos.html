@@ -1,0 +1,21 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-19-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Multiple Objects">
+        <div class="slds-var-m-around_medium">
+            <template lwc:if={objectInfos}>
+                <template for:each={objectInfos.results} for:item="obj">
+                    <div key={obj.apiName}>
+                        <div>Objects Account Api     : {obj.result.apiName}</div>
+                        <div>Objects Opportunity Api : {obj.result.apiName}</div>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

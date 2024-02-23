@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-21-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+ 
+        <lightning-card title="Apex Imerative Demo">
+            <div class="slds-var-p-around_medium">
+                <lightning-button variant="brand" label="Call Account Method" onclick={handleClick}> 
+                </lightning-button>
+            </div>
+                <template lwc:if={accounts}>
+                    <template for:each={accounts} for:item="account">
+                        <div class="slds-box slds-box_xx-small" key={account.id}>
+                            <p>Name - {account.Name}</p>
+                        </div>
+                    </template>
+                </template>
+        </lightning-card>
+   
+</template>

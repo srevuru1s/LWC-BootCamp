@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-18-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+   <lightning-card title="User details using @wire Function">
+    <div class="slds-var-p-around_small">
+        <p>User Id:{userid} </p>
+        <template lwc:if={userDetails}>
+            <p>{userDetails.Name.value}</p>
+            <p>{userDetails.Email.value}</p>
+        </template>
+    </div>
+   </lightning-card>
+
+   <lightning-card title="User details using @wire Property">
+    <div class="slds-var-p-around_small">
+        <p>User Id:{userid} </p>
+        <template lwc:if={userDetailProperty.data}>
+            <p>User Name : {userDetailProperty.data.fields.Name.value}</p>
+            <p>User Email: {userDetailProperty.data.fields.Email.value}</p>
+        </template>
+    </div>
+   </lightning-card>
+</template>
