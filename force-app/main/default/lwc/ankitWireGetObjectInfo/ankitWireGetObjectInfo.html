@@ -1,0 +1,34 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Get Object Info">
+    <!-- <template lwc:if={accountInfo}>
+            <div class="slds-var-p-around_medium">
+                <p> Account API Name : {accountInfo.apiName}</p>
+                <template for:each={accountInfo.childRelationships} for:item="childRecord">
+                    <p key={childRecord.childObjectApiName}>
+                        Child Api Detials : {childRecord.relationshipName}
+                    </p>
+                </template>
+            </div>
+        </template>
+        <template lwc:elseif={accounterror}>
+            <c-error-panel errors={accounterror}></c-error-panel>
+        </template> -->
+    <template lwc:if={objectInfo}>
+      <div class="slds-var-p-around_medium">
+        <template for:each={objectInfo.results} for:item="currItem">
+          <div key={currItem.result.apiName}>
+            <p>Account Api Name : {currItem.result.apiName}</p>
+            <!-- <p> Contact Api Name : {currItem.fields.AccountNumber.apiName} </p> -->
+          </div>
+        </template>
+      </div>
+    </template>
+  </lightning-card>
+</template>

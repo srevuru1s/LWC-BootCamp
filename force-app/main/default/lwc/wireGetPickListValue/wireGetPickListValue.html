@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Pick List Values ">
+    <template lwc:if={pickListValues}>
+      <lightning-combobox
+        name="Type Filed"
+        label="Account Type"
+        value={selectedValue}
+        placeholder="Select Progress"
+        options={pickListValues}
+        onchange={handleChange}
+      ></lightning-combobox>
+      <p>selected acc type : {selectedValue}</p>
+    </template>
+  </lightning-card>
+</template>

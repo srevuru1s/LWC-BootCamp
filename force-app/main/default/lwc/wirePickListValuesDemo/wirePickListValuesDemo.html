@@ -6,32 +6,31 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <lightning-card title="getPicklistValuesByRecordType Adapter">
-        <div class="slds-var-p-around_medium">
-            <template lwc:if={ratingOptions}>
-                <lightning-combobox
-                name="rating"
-                label="Rating"
-                value={selectedRating}
-                placeholder="Select Rating"
-                options={ratingOptions}
-                onchange={handleChange}
-                ></lightning-combobox>
-                <p>Selected Rating: {selectedRating}</p>
-            </template>
-            
-            <template lwc:if={industryOptions}>
-                <lightning-combobox
-                name="industry"
-                label="Industry"
-                value={selectedIndustry}
-                placeholder="Select Rating"
-                options={industryOptions}
-                onchange={handleChange}
-                ></lightning-combobox>
-                <p>Selected Industry: {selectedIndustry}</p>
-            </template>
+  <lightning-card title="getPicklistValuesByRecordType Adapter">
+    <div class="slds-var-p-around_medium">
+      <template lwc:if={ratingOptions}>
+        <lightning-combobox
+          name="rating"
+          label="Rating"
+          value={selectedRating}
+          placeholder="Select Rating"
+          options={ratingOptions}
+          onchange={handleChange}
+        ></lightning-combobox>
+        <p>Selected Rating: {selectedRating}</p>
+      </template>
 
-        </div>
-    </lightning-card>
+      <template lwc:if={industryOptions}>
+        <lightning-combobox
+          name="industry"
+          label="Industry"
+          value={selectedIndustry}
+          placeholder="Select Rating"
+          options={industryOptions}
+          onchange={handleChange}
+        ></lightning-combobox>
+        <p>Selected Industry: {selectedIndustry}</p>
+      </template>
+    </div>
+  </lightning-card>
 </template>

@@ -1,22 +1,22 @@
-import { LightningElement } from 'lwc';
-import findContacts from '@salesforce/apex/ContactController.findContacts';
+import { LightningElement } from "lwc";
+import findContacts from "@salesforce/apex/ContactController.findContacts";
 
 export default class ApexImperativeMethodWithParams extends LightningElement {
-    searchKey = '';
-    contacts;
-    error;
+  searchKey = "";
+  contacts;
+  error;
 
-    handleKeyChange(event) {
-        this.searchKey = event.target.value;
-    }
+  handleKeyChange(event) {
+    this.searchKey = event.target.value;
+  }
 
-    async handleSearch() {
-        try {
-            this.contacts = await findContacts({ searchKey: this.searchKey });
-            this.error = undefined;
-        } catch (error) {
-            this.error = error;
-            this.contacts = undefined;
-        }
+  async handleSearch() {
+    try {
+      this.contacts = await findContacts({ searchKey: this.searchKey });
+      this.error = undefined;
+    } catch (error) {
+      this.error = error;
+      this.contacts = undefined;
     }
+  }
 }

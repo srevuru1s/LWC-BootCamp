@@ -1,10 +1,10 @@
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api } from "lwc";
 
 export default class Child extends LightningElement {
-    @api firstName;
-    @api lastName;
+  @api firstName;
+  @api lastName;
 
-    get fullName() {
-        return `${this.firstName} ${this.lastName}`;
-    }
+  get fullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
 }

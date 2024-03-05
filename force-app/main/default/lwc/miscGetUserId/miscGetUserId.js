@@ -1,6 +1,6 @@
-import { LightningElement } from 'lwc';
-import Id from '@salesforce/user/Id';
+import { LightningElement } from "lwc";
+import Id from "@salesforce/user/Id";
 
 export default class MiscGetUserId extends LightningElement {
-    userId = Id;
+  userId = Id;
 }

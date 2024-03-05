@@ -6,11 +6,15 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <lightning-card title="Displaying the Hooks">
-        <template lwc:if={isVisible}>
-            <c-life-cycle-hook-child></c-life-cycle-hook-child>
-        </template>
-        <lightning-button variant="brand" label="Hide Child" onclick={handleClick}
-         class="slds-var-m-left_x-small"></lightning-button>
-    </lightning-card>
+  <lightning-card title="Displaying the Hooks">
+    <template lwc:if={isVisible}>
+      <c-life-cycle-hook-child></c-life-cycle-hook-child>
+    </template>
+    <lightning-button
+      variant="brand"
+      label="Hide Child"
+      onclick={handleClick}
+      class="slds-var-m-left_x-small"
+    ></lightning-button>
+  </lightning-card>
 </template>

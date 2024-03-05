@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="This is PicklistValues">
+    <template lwc:if={industryPickList.data}>
+      <lightning-combobox
+        label="Industry"
+        value={selectedIndustry}
+        placeholder="Select Industry"
+        options={industryPickList.data.values}
+        onchange={handleChange}
+      >
+      </lightning-combobox>
+      <p>Selected value : {selectedIndustry}</p>
+    </template>
+  </lightning-card>
+</template>

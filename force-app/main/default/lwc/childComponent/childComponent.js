@@ -1,20 +1,19 @@
-import { LightningElement,api } from 'lwc';
+import { LightningElement, api } from "lwc";
 
 export default class ChildComponent extends LightningElement {
-    
-    @api display; //* small case
-    @api displayGreeting; //* camel case
-    @api user;
-    @api isUserAvailable = false; //* Boolean variable
-    displaylifeTag;
+  @api display; //* small case
+  @api displayGreeting; //* camel case
+  @api user;
+  @api isUserAvailable = false; //* Boolean variable
+  displaylifeTag;
 
-    set displaytagoflife(value) {
-        let cloneOfvalue = value;
-        this.displaylifeTag = cloneOfvalue.toUpperCase();
-    }
+  set displaytagoflife(value) {
+    let cloneOfvalue = value;
+    this.displaylifeTag = cloneOfvalue.toUpperCase();
+  }
 
-    @api 
-    get displaytagoflife () {
-        return this.displaylifeTag;
-    }
-};
+  @api
+  get displaytagoflife() {
+    return this.displaylifeTag;
+  }
+}

@@ -1,11 +1,11 @@
-import { LightningElement } from 'lwc';
+import { LightningElement } from "lwc";
 
 export default class Paginator extends LightningElement {
-    handlePrevious() {
-        this.dispatchEvent(new CustomEvent('previous'));
-    }
+  handlePrevious() {
+    this.dispatchEvent(new CustomEvent("previous"));
+  }
 
-    handleNext() {
-        this.dispatchEvent(new CustomEvent('next'));
-    }
+  handleNext() {
+    this.dispatchEvent(new CustomEvent("next"));
+  }
 }

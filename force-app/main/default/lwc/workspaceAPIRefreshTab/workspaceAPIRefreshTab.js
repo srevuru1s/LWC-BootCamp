@@ -1,20 +1,20 @@
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, wire } from "lwc";
 import {
-    IsConsoleNavigation,
-    getFocusedTabInfo,
-    refreshTab
-} from 'lightning/platformWorkspaceApi';
+  IsConsoleNavigation,
+  getFocusedTabInfo,
+  refreshTab
+} from "lightning/platformWorkspaceApi";
 
 export default class WorkspaceAPIRefreshTab extends LightningElement {
-    @wire(IsConsoleNavigation) isConsoleNavigation;
+  @wire(IsConsoleNavigation) isConsoleNavigation;
 
-    async refreshTab() {
-        if (!this.isConsoleNavigation) {
-            return;
-        }
-        const { tabId } = await getFocusedTabInfo();
-        await refreshTab(tabId, {
-            includeAllSubtabs: true
-        });
+  async refreshTab() {
+    if (!this.isConsoleNavigation) {
+      return;
     }
+    const { tabId } = await getFocusedTabInfo();
+    await refreshTab(tabId, {
+      includeAllSubtabs: true
+    });
+  }
 }

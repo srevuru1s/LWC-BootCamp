@@ -1,18 +1,16 @@
-import { LightningElement } from 'lwc';
+import { LightningElement } from "lwc";
 
 export default class ParentComponent extends LightningElement {
+  //* if we are not defining it will be private
+  greeting = "Welcome to LWC Boot Camp";
 
-    //* if we are not defining it will be private
-    greeting = "Welcome to LWC Boot Camp";
+  motivation = "Perfection will come only on practiese";
 
-    motivation = "Perfection will come only on practiese";
+  userdetials = {
+    firstname: "Sagar",
+    lastname: "Object Revuru",
+    channel: "LWC Boot Camp"
+  };
 
-    userdetials = {
-        firstname : "Sagar",
-        lastname  : "Object Revuru",
-        channel   : "LWC Boot Camp"
-    }
-
-    tagoflife = "Knowledge is Wealth";
-    
+  tagoflife = "Knowledge is Wealth";
 }

@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 02-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Get Records ui Api">
+    <p>Hello Im records</p>
+    <template lwc:if={allRecords}>
+      <template for:each={allRecords.results} for:item="records">
+        <div key={records.result.id} class="slds-var-p-around_medium">
+          <p>Id: {records.result.id}</p>
+          <p>Name = {records.result.fields.Name.value}</p>
+          <!-- <template lwc:if={records.result.fields.Type.value}>
+                        <p> Account Type  = {records.result.fields.Type.value}</p>
+                    </template>
+                    <template lwc:elseif={records.result.fields.LastName.value}>
+                        <p> Contact LastName  = {records.result.fields.LastName.value}</p>
+                    </template>                      -->
+        </div>
+      </template>
+    </template>
+  </lightning-card>
+</template>

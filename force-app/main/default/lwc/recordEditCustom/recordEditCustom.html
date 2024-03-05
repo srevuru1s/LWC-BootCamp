@@ -6,17 +6,21 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <lightning-card title="Custom Edit form With custom validation">
-        <lightning-record-edit-form
-        object-api-name={objectName}
-        
-        >
-            <lightning-input label="Name"
-            value = {inputValue}
-            onkeyup={handleChange}
-            class= "slds-var-m-around_small">
-            </lightning-input>
-            <lightning-button type="submit" label="create account" class="slds-var-m-top_medium" onsubmit={handleSubmit}></lightning-button>
-        </lightning-record-edit-form>
-    </lightning-card>
+  <lightning-card title="Custom Edit form With custom validation">
+    <lightning-record-edit-form object-api-name={objectName}>
+      <lightning-input
+        label="Name"
+        value={inputValue}
+        onkeyup={handleChange}
+        class="slds-var-m-around_small"
+      >
+      </lightning-input>
+      <lightning-button
+        type="submit"
+        label="create account"
+        class="slds-var-m-top_medium"
+        onsubmit={handleSubmit}
+      ></lightning-button>
+    </lightning-record-edit-form>
+  </lightning-card>
 </template>

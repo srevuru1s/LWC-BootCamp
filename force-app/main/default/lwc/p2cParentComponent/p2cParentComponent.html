@@ -6,41 +6,43 @@
   @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
 -->
 <template>
-    <!-- Example of simple Data -->
-    <c-p2c-alert-component message = 'Hurray Im i got the data!!'
-    card-heading = 'parent to child Primitive Data Communication'
-    number = 20
-    is-valid >
-       
-    </c-p2c-alert-component>
-    <!-- Example of Array  -->
-    <div class= "slds-var-m-around_medium">
-        <c-p2c-carousel-component carousel-details = {carouselData}>  
-        </c-p2c-carousel-component>
+  <!-- Example of simple Data -->
+  <c-p2c-alert-component
+    message="Hurray Im i got the data!!"
+    card-heading="parent to child Primitive Data Communication"
+    number="20"
+    is-valid
+  >
+  </c-p2c-alert-component>
+  <!-- Example of Array  -->
+  <div class="slds-var-m-around_medium">
+    <c-p2c-carousel-component carousel-details={carouselData}>
+    </c-p2c-carousel-component>
+  </div>
+
+  <!-- Example on action -->
+  <div class="slds-var-m-around_medium lgc-bg"></div>
+  <lightning-card title="Parent to child communication on action">
+    <div class="slds-var-m-around_medium lgc-bg">
+      <lightning-input
+        type="number"
+        label="Enter percentage"
+        onkeyup={changeHandler}
+        value={percentage}
+      ></lightning-input>
+      <c-p2c-progress-bar progress-value={percentage}></c-p2c-progress-bar>
     </div>
+  </lightning-card>
 
-    <!-- Example on action -->
-    <div class="slds-var-m-around_medium lgc-bg"></div>
-        <lightning-card title="Parent to child communication on action">
-            <div class="slds-var-m-around_medium lgc-bg">
-                <lightning-input type="number" label="Enter percentage"
-                onkeyup={changeHandler}
-                value={percentage}></lightning-input>
-                <c-p2c-progress-bar
-                progress-value ={percentage}
-                ></c-p2c-progress-bar> 
-            </div>
-        </lightning-card>
-        
-        
-            <lightning-card title="Reset the slider">
+  <lightning-card title="Reset the slider">
+    <c-p2c-slider-component></c-p2c-slider-component>
 
-                <c-p2c-slider-component></c-p2c-slider-component>
-
-                <lightning-button variant="destructive" label="Destructive" 
-                title="Destructive action" onclick={handleClick} class="slds-var-m-vertical_xxx-small"
-                ></lightning-button>
-                
-            </lightning-card> 
-        
+    <lightning-button
+      variant="destructive"
+      label="Destructive"
+      title="Destructive action"
+      onclick={handleClick}
+      class="slds-var-m-vertical_xxx-small"
+    ></lightning-button>
+  </lightning-card>
 </template>

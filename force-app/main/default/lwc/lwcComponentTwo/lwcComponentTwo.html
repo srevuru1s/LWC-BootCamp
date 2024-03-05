@@ -1,20 +1,21 @@
 <template>
-    <lightning-card title="Conditional Rendering" icon-name="custom:custom14"> 
-        <div class="slds-p-around_small">
-            <lightning-input label="Display Message" type="checkbox" name="input1"
-                onchange={changeHandler}> 
-
-            </lightning-input>
-        </div>
-        <div class="slds-p-around_small"> 
-            
-            <template lwc:if={displayMessage}> 
-                <p>Reay for LWC Interview</p>
-            </template>
-            <template lwc:else>
-                <p> Complete the Boot Camp of LWC </p>
-            </template>
-
-        </div>
-    </lightning-card>    
+  <lightning-card title="Conditional Rendering" icon-name="custom:custom14">
+    <div class="slds-p-around_small">
+      <lightning-input
+        label="Display Message"
+        type="checkbox"
+        name="input1"
+        onchange={changeHandler}
+      >
+      </lightning-input>
+    </div>
+    <div class="slds-p-around_small">
+      <template lwc:if={displayMessage}>
+        <p>Reay for LWC Interview</p>
+      </template>
+      <template lwc:else>
+        <p>Complete the Boot Camp of LWC</p>
+      </template>
+    </div>
+  </lightning-card>
 </template>
