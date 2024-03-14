@@ -1,0 +1,36 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-13-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get Pick list values by RecordType ID">
+        <template lwc:if={objectDetails}>
+            <lightning-combobox
+            name="Industry"
+            label="Account Industry"
+            value={selectedValue}
+            placeholder="Select Industry"
+            options={options}
+            onchange={handleChange} ></lightning-combobox>
+            <p> Selected Industry : {selectedValue}</p> 
+
+            <lightning-combobox
+            name="Rating"
+            label="Account Rating"
+            value={selectedRating}
+            placeholder="Select Rating"
+            options={ratingOptions}
+            onchange={handleChange} ></lightning-combobox>
+            <p> Selected Rating : {selectedRating}</p> 
+
+
+        </template>
+        
+    </lightning-card>
+</template>
+
+
+

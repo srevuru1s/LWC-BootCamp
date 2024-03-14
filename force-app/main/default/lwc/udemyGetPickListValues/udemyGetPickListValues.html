@@ -1,0 +1,33 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-13-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get PickList Values">
+        <template lwc:if={objectDetails}>
+            <lightning-combobox
+            name="Industry"
+            label="Account Industry PickList Value"
+            value={selectedIndustry}
+            placeholder="Select Industry"
+            options={industryOptions}
+            onchange={handleChange} ></lightning-combobox>
+            <p>Selected Industry values is : {selectedIndustry}</p>
+        </template>
+
+        <template lwc:if={objectDetails}>
+            <lightning-combobox
+            name="Type"
+            label="Account Type PickList Value"
+            value={selectedType}
+            placeholder="Select Type"
+            options={typeOptions}
+            onchange={typeHandleChange} ></lightning-combobox>
+            <p>Selected Type values is : {selectedType}</p>
+        </template>
+
+    </lightning-card>
+</template>

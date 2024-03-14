@@ -1,0 +1,65 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-07-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Im a Parent Component">
+    <div class="slds-var-m-around_small">
+      <c-udemy-child-component
+        message="Hello You will get message from Parent"
+        card-heading="P2C Primitive Data Communication"
+        number="441"
+        is-valid
+        carousal-details={carouselData}
+        progress-value={percentage}
+      ></c-udemy-child-component>
+    </div>
+  </lightning-card>
+
+  <lightning-card title="P2C on action">
+    <div class="slds-var-m-around_medium">
+      <lightning-input
+        type="'number"
+        label="Enter Percentage"
+        onchange={onChange}
+      ></lightning-input>
+      <c-udemy-child-component
+        class="resethandler"
+        progress-value={percentage}
+      ></c-udemy-child-component>
+    </div>
+    <lightning-button
+      variant="brand"
+      label="Reset Slider"
+      onclick={handleResetSlider}
+      class="slds-var-m-left_x-small"
+      >click me</lightning-button
+    >
+  </lightning-card>
+
+  <lightning-card title="This is for Query Selector">
+    <div class="slds-var-m-around_medium">
+      <h1>Hello Lets Get More LWC</h1>
+      <lightning-button
+        variant="brand"
+        label="Click Me"
+        title="Primary action"
+        onclick={handleClick}
+        class="slds-var-m-left_x-small"
+        >click me</lightning-button
+      >
+      <div class="slds-var-m-around_small">
+        <template for:each={names} for:item="name">
+          <h1 class="myname" key={name}>My Fav Name : {name}</h1>
+        </template>
+      </div>
+    </div>
+  </lightning-card>
+
+  <lightning-card title="Setter and Getter">
+    <c-udemy-child-component detail={userDetails}></c-udemy-child-component>
+  </lightning-card>
+</template>

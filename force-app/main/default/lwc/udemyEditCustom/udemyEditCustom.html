@@ -1,0 +1,16 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-11-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Custom validation on LREF" >
+        <lightning-record-edit-form object-api-name={objectApiName} onsubmit={handleSubmit} onsuccess={successHandler} onerror={errorHandler} lwc:ref="recordForm">
+            <lightning-input label="Name" value={inputValue} onkeyup={handleChane}
+                class="slds-var-m-around_medium"></lightning-input>
+                <lightning-button class="slds-var-m-around_medium" type="submit" label="Create Account"></lightning-button>
+        </lightning-record-edit-form>
+    </lightning-card>
+</template>

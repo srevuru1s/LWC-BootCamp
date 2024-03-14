@@ -25,5 +25,9 @@
   },
   "peacock.color": "#215732",
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "cSpell.ignoreWords": [
+    "Udemy",
+    "picklist"
+  ]
 }

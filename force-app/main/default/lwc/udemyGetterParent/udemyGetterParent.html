@@ -1,0 +1,24 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-07-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Parent Component">
+    <c-udemy-getter-child detial={userDetials}>
+      <div slot="first">'Hello Im the first slot'</div>
+      <div slot="second">'Hello Im the second slot'</div>
+      <div slot="footer">'Hello Footer'</div>
+    </c-udemy-getter-child>
+  </lightning-card>
+
+  <lightning-card title="Parent Component">
+    <c-udemy-getter-child detial={userDetials}>
+      <div slot="first">'Hello Im the first slot'</div>
+      <div slot="second">'Hello Im the second slot'</div>
+      <!-- <div slot="footer">'Hello Footer'</div> -->
+    </c-udemy-getter-child>
+  </lightning-card>
+</template>

@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-07-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Hello Im Child Component">
+    <p>Sending Data From Child</p>
+    <P>Name : {detial.firstName}</P>
+    <P>LName : {detial.lastName}</P>
+    <P>Age : {detial.age}</P>
+    <P>Location : {detial.location}</P>
+
+    <div><slot name="first"></slot></div>
+    <div><slot name="second"></slot></div>
+
+    <footer class="slds-card__footer slds-hide">
+      <slot name="footer" onslotchange={handleFooter}></slot>
+    </footer>
+  </lightning-card>
+</template>

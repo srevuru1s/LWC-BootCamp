@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-07-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title="Child To Parent Component">
+    <div class="slds-var-m-around_medium" onclose={closeHandler}>
+      <h1>Im into the Parent Component</h1>
+      <lightning-button
+        variant="brand"
+        label="Show Model"
+        onclick={clickHandler}
+      ></lightning-button>
+      <h1>{mesg}</h1>
+      <template lwc:if={showmodel}>
+        <c-udemy-child-parent-component-child></c-udemy-child-parent-component-child>
+      </template>
+    </div>
+  </lightning-card>
+</template>

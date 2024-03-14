@@ -1,0 +1,43 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-07-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+  <lightning-card title={cardHeading}>
+    <div class="slds-notify_alert slds-theme_error" role="alert">
+      Hurray !! I got the data {message} {number} {isValid}
+    </div>
+    <div class="slds-var-m-around_small">
+      <template for:each={carousalDetails} for:item="image">
+        <lightning-carousel-image
+          key={image.header}
+          src={image.src}
+          header={image.header}
+          description={image.description}
+        ></lightning-carousel-image>
+      </template>
+    </div>
+
+    <lightning-progress-bar
+      value={progressValue}
+      size="large"
+    ></lightning-progress-bar>
+
+    <lightning-slider
+      label="Volume"
+      value={val}
+      onchange={onChangeHandler}
+    ></lightning-slider>
+    <lightning-card title="Setter and Getter">
+      <div>
+        <!-- <p>{detail.firstName}</p>
+        <p>{detail.lastName}</p>
+        <p>{detail.age}</p>
+        <p>{detail.location}</p> -->
+      </div>
+    </lightning-card>
+  </lightning-card>
+</template>
