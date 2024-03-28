@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-25-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Client Side Contact Filtering">
+        <div class="slds-var-p-around_large">
+            <lightning-input label="Filter" onkeyup={filterHandler} type="text"></lightning-input>
+            <table>
+                <thead>
+                    <tr>
+                        <template for:each={headings} for:item="heading">
+                            <th key={heading}>{heading}</th>
+                        </template>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                        <template for:each={filteredData} for:item="data">
+                            <tr key={data.Id}>
+                                <td>{data.Id}</td>
+                                <td>{data.Name}</td>
+                                <td>{data.Title}</td>
+                                <td>{data.Email}</td>
+                            </tr>
+                        </template>
+                        
+                    
+                </tbody>
+            </table>
+        </div>
+    </lightning-card>
+</template>

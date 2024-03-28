@@ -1,0 +1,93 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-26-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Fellow Force Crash Corse 1">
+        <div class="slds-var-p-around_small">
+            <p> Property from JS: {data1}</p>
+        </div>
+        <div class="slds-var-m-around_small">
+
+            <p> {details.Name}</p>
+            <p> {details.Course}</p>
+            <p> {details.College}</p>
+            <p> {details.Location}</p>
+            <p> {details.Skills}</p>
+            <p> {details.Experience}</p>
+            <p> {details.Salary}</p>
+            
+        </div>
+        <div class="slds-var-m-around_medium">
+            <p> Grade of the Employee : {getGrade}</p>
+        </div>
+    </lightning-card>
+    <lightning-card title="Employee With Array">
+        <table class="slds-table slds-table_bordered">
+            <thead>
+                    <tr>
+                        <td> Name </td>
+                        <td> Course </td>
+                        <td> College </td>
+                        <td> Location </td>
+                        <td> Skills </td>
+                        <td> Experience </td>
+                        <td> Salary </td>
+
+                    </tr>               
+            </thead>
+            <tbody>
+                <template for:each={arrayEmployees} for:item="employee">
+                    <tr key={employee.Name}>
+                        <td> {employee.Name} </td>
+                        <td> {employee.Course} </td>
+                        <td> {employee.College} </td>
+                        <td> {employee.Location} </td>
+                        <td> {employee.Skills} </td>
+                        <td> {employee.Experience} </td>
+                        <td> {employee.Salary}</td>
+                    </tr>
+                </template>
+                
+            </tbody>
+        </table>
+
+        <table class="slds-table slds-table_bordered">
+            <thead>
+                    <tr>
+                        <td> Name </td>
+                        <td> Course </td>
+                        <td> College </td>
+                        <td> Location </td>
+                        <td> Skills </td>
+                        <td> Experience </td>
+                        <td> Salary </td>
+
+                    </tr>               
+            </thead>
+<tbody>
+    <template iterator:employee={arrayEmployees}>
+        <tr key={employee.value.Name}>
+            <!-- Border div for first employee -->
+            
+            <!-- Table cells containing employee data -->
+            <td>{employee.value.Name}</td>
+            <td>{employee.value.Course}</td>
+            <td>{employee.value.College}</td>
+            <td>{employee.value.Location}</td>
+            <td>{employee.value.Skills}</td>
+            <td>{employee.value.Experience}</td>
+            <td>{employee.value.Salary}</td>
+            
+            <!-- Border div for last employee -->
+            
+        </tr>
+    </template>
+</tbody>
+        </table>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,55 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Apex Wire To Property Demo">
+        <template lwc:if={accounts}>
+            <template for:each={accounts} for:item="account">
+                <div key={account.Id} class="slds-box slds-box_xx-small">
+                    <p><strong>Name : {account.Name}</strong></p>
+                    <p><strong>Phone : {account.Phone}</strong></p>
+                    <p><strong>Type : {account.Type}</strong></p>
+                    <p><strong>Rating : {account.Rating}</strong></p>
+                </div>
+            </template>
+            
+        </template>
+    </lightning-card>
+
+    <lightning-card title="With Param Wire">
+        <template lwc:if={selectedType.data}>
+
+            <div class="slds-box slds-box_xx-small">
+                <p>Hello I got the data</p>
+            </div>
+            
+        </template>
+    </lightning-card>
+
+    <lightning-card title="Type Param Wire">
+        <template lwc:if={wiredSelectAccountType}>
+            <lightning-combobox name="type"
+                label="Choose an account type"
+                options={optionSelected}
+                onchange={handleTypeChange}
+                value={typeSelected}
+                class="slds-var-m-bottom_small"
+                ></lightning-combobox>
+        </template>
+        <template lwc:if={wireData}>
+            <template for:each={wireData} for:item="account">
+                <div key={account.Id} class="slds-box slds-box_xx-small">
+                    <p><strong>Name : {account.Name}</strong></p>
+                    
+                    <p><strong>Type : {account.Type}</strong></p>
+                    <p><strong>AnnualRevenue : {account.AnnualRevenue}</strong></p>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+    
+</template>

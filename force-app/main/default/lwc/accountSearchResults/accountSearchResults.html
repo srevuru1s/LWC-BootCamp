@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-27-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <template lwc:if={accounts}>
+        <div style="height: 300px;">
+            <lightning-datatable
+                    key-field="Id"
+                    data={accounts}
+                    columns={columns}
+                    hide-checkbox-column="true"
+                    show-row-number-column="true"
+                    onrowaction={rowActionHandler}>
+            </lightning-datatable>
+        </div>
+    </template>
+    
+</template>

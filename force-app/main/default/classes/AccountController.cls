@@ -2,10 +2,47 @@
  * @description       :
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             :
- * @last modified on  : 02-28-2024
+ * @last modified on  : 03-27-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
  **/
 public with sharing class AccountController {
+
+  //* Force Fellow
+  @AuraEnabled(cacheable=true)
+  public static List<Account> getAccounts(String searchText) {
+    
+    try {
+      if (String.isEmpty(searchText)) {
+        return [SELECT Id, Name FROM Account WITH USER_MODE LIMIT 100];
+      } else {
+        searchText = '%' + searchText + '%';
+        return [
+          SELECT Id, Name
+          FROM Account
+          WHERE Name LIKE :searchText
+          WITH USER_MODE
+          LIMIT 100
+        ];
+      }
+    } catch (System.Exception allExp) {
+      throw new AuraHandledException(allExp.getMessage());
+    }
+  }
+  //* Force Fellow
+  @AuraEnabled(cacheable=true)
+  public static List<Contact> getAccountContacts(String accountId) {
+    try {
+      return [SELECT Id, Name FROM Contact WHERE AccountId =: accountId];
+    } catch (System.Exception e) {
+      throw new AuraHandledException(e.getMessage());
+    }
+  }
+  //* For LWC Map
+  @AuraEnabled(cacheable = true)
+  public static List<Account> lwcMap() {
+    return [SELECT Id, Name, Description, BillingStreet, BillingCountry, BillingCity, BillingState, BillingPostalCode FROM Account
+            ORDER BY Name LIMIT 20];
+  }
   //*Get Parent Accounts
   @AuraEnabled(cacheable=true)
   public static List<Account> getParentAccount() {
@@ -15,11 +52,23 @@ public with sharing class AccountController {
   @AuraEnabled(cacheable=true)
   public static List<Account> getAccountList() {
     return [
-      SELECT Id, Name, Phone, Type, Rating
+      SELECT Id, Name, Phone, Type, Rating, Industry
       FROM Account
+      WHERE Rating = null
       WITH USER_MODE
       LIMIT 10
     ];
+  }
+
+
+  @AuraEnabled(cacheable=true)
+  public static List<Account> selectAccountType(String newType) {
+    return [
+      SELECT Id, Name, Phone, Type, AnnualRevenue
+      FROM Account
+      WHERE Type =: newType
+      WITH USER_MODE
+      LIMIT 10];
   }
 
   @AuraEnabled(cacheable=true)

@@ -1,10 +1,17 @@
+/**
+ * @description       : 
+ * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+ * @group             : 
+ * @last modified on  : 03-25-2024
+ * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+**/
 public with sharing class ContactController {
   @AuraEnabled(cacheable=true)
   public static List<Contact> getContactList() {
     return [
       SELECT Id, Name, FirstName, LastName, Title, Phone, Email, Picture__c
       FROM Contact
-      WHERE Picture__c != NULL
+      
       WITH USER_MODE
       LIMIT 10
     ];

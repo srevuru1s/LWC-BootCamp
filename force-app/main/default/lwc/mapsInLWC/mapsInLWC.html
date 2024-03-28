@@ -1,0 +1,26 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-25-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+
+    <lightning-card title="Map of Account">
+        <div class=".slds-var-m-around_medium">
+            <template lwc:if={mapMarkers.length}>
+                <lightning-map map-markers={mapMarkers}
+                markers-title={markersTitle}
+                onmarkerselect={callMarkerHandler}
+                selected-marker-value={selectedMarkerValue}
+                ></lightning-map>
+            </template>
+            <template lwc:elseif={mapMarkers.length}>
+                <div>No Account Found</div>
+            </template>
+        </div>       
+        
+    </lightning-card>
+
+</template>

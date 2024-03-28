@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-15-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Get Record UI">
+        <template lwc:if={formFields}>
+            <template for:each={formFields} for:item="field">
+                <div key={field.label} class="slds-var-m-around_large">
+                    
+                    <p>{field.label} : {field.value}</p>
+                    
+                    
+                </div>
+            </template>
+        </template>
+        
+    </lightning-card>
+</template>

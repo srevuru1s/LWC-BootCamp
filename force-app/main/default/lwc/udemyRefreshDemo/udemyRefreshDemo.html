@@ -1,0 +1,23 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-25-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Refresh apex Demo" icon-name="custom:custom63">
+        <template lwc:if={account.data}>
+            <div class="slds-var-m-around_medium">
+                <lightning-datatable
+                    key-field="Id"
+                    data={account.data}
+                    columns={columns}
+                    onsave={handleSave}
+                    draft-values={draftValues} >
+                </lightning-datatable>
+            </div>
+        </template>
+        
+    </lightning-card>
+</template>

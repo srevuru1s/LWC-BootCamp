@@ -1,0 +1,15 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-26-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Account Search">
+        <c-account-search-force onsearchaccountcontact={searchAccountContactHandler}></c-account-search-force>
+        <lightning-card title="Account List">
+            <c-account-search-results search-text={searchText}></c-account-search-results>
+        </lightning-card>
+    </lightning-card>
+</template>

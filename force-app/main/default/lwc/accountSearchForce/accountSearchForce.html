@@ -1,0 +1,22 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-26-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+   
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-input label="Enter Account Name" placeholder="Search Account" onchange={accountNameChangeHandler}></lightning-input>
+            </lightning-layout-item>
+        </lightning-layout>
+
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-button class="slds-var-m-top_large" label="Search" variant="brand" onclick={searchClickHandler}></lightning-button>
+            </lightning-layout-item>   
+        </lightning-layout>
+   
+</template>

@@ -1,0 +1,45 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-23-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title="Apex with Imperative Call">
+        <div class="slds-var-p-around_medium">
+            <lightning-button label="Call Account Method" variant="brand" onclick={onclickHandler}>
+            </lightning-button>
+            <template lwc:if={accounts}>
+                <template for:each={accounts} for:item="account">
+                    <div key={account.Id} class="slds-box slds-box_xx-small">
+
+                        <p><strong>Name : {account.Name}</strong></p>
+                        <p><strong>Phone : {account.Phone}</strong></p>
+                        <p><strong>Type : {account.Type}</strong></p>
+                        <P><strong>Rating: account.Rating</strong></P>
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+
+    <lightning-card title="Apex with Imperative With Params">
+        <div class="slds-var-p-around_medium">
+            <lightning-input lwc:ref="searchRef" type="search" label="search Account" value={searchvalue}></lightning-input>
+
+            <lightning-button label="Account Search" variant="brand" onclick={searchHandler}>
+            </lightning-button>
+            <template lwc:if={searchedAccounts}>
+                <template for:each={searchedAccounts} for:item="account">
+                    <div key={account.Id} class="slds-box slds-box_xx-small">
+                        <p><strong>Name : {account.Name}</strong></p>
+                        <p><strong>Phone : {account.Phone}</strong></p>
+                        <p><strong>Type : {account.Type}</strong></p>
+                        
+                    </div>
+                </template>
+            </template>
+        </div>
+    </lightning-card>
+</template>

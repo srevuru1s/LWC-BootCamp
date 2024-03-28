@@ -1,0 +1,37 @@
+<!--
+  @description       : 
+  @author            : ChangeMeIn@UserSettingsUnder.SFDoc
+  @group             : 
+  @last modified on  : 03-27-2024
+  @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
+-->
+<template>
+    <lightning-card title={title}>
+        <lightning-layout multiple-rows class="slds-var-p-around_medium">
+            <template lwc:if={isAccountSelected}>
+                <template lwc:if={hasContacts}>
+                    <template for:each={contacts} for:item="contact">
+                        <lightning-layout class="slds-box slds-var-m-around_medium" key={contact.Id}>
+                            <lightning-layout-item size="8">
+                                <strong>{contact.Name}</strong>
+                            </lightning-layout-item>
+                            <lightning-layout-item size="4">
+                                <lightning-button variant="brand" label="Add Contact"></lightning-button>
+                                <lightning-button variant="brand" label="Delete Contact"></lightning-button>
+
+                            </lightning-layout-item>
+                             
+                        </lightning-layout>
+                           
+                    </template>
+                </template>
+                <template lwc:elseif={hasContacts}>
+                    
+                </template>
+            </template>
+            <template lwc:else>
+                No account selected
+            </template>
+        </lightning-layout>
+    </lightning-card>
+</template>
