@@ -37,7 +37,7 @@ public with sharing class AccountController {
       throw new AuraHandledException(e.getMessage());
     }
   }
-  //* Try version control
+  //* Try version control Test
   public static void version() {
     Account myAcc =  [SELECT Id FROM Account LIMIT 1];
     System.debug('This is test ');
