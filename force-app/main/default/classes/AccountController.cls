@@ -2,7 +2,7 @@
  * @description       :
  * @author            : ChangeMeIn@UserSettingsUnder.SFDoc
  * @group             :
- * @last modified on  : 03-27-2024
+ * @last modified on  : 04-02-2024
  * @last modified by  : ChangeMeIn@UserSettingsUnder.SFDoc
  **/
 public with sharing class AccountController {
@@ -36,6 +36,11 @@ public with sharing class AccountController {
     } catch (System.Exception e) {
       throw new AuraHandledException(e.getMessage());
     }
+  }
+  //* Try version control Test
+  public static void version() {
+    Account myAcc =  [SELECT Id FROM Account LIMIT 1];
+    System.debug('This is test ');
   }
   //* For LWC Map
   @AuraEnabled(cacheable = true)
@@ -85,12 +90,14 @@ public with sharing class AccountController {
 
   @AuraEnabled(cacheable=true)
   public static Account getSingleAccount() {
+    System.debug('Im in LWC');
     return [
       SELECT Id, Name, Phone, Type
       FROM Account
       WITH USER_MODE
       LIMIT 1
     ];
+    
   }
 
   @AuraEnabled
