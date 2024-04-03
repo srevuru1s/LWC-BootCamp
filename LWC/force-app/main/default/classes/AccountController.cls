@@ -40,6 +40,8 @@ public with sharing class AccountController {
   //* Try version control Test
   public static void version() {
     Account myAcc =  [SELECT Id FROM Account LIMIT 1];
+    Contact myCon = [SELECT Id FROM Account LIMIT 1];
+    
     System.debug('This is test ');
   }
   //* For LWC Map
