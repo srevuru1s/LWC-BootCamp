@@ -40,7 +40,7 @@ public with sharing class AccountController {
   //* Try version control
   public static void version() {
     Account myAcc =  [SELECT Id FROM Account LIMIT 1];
-    System.debug('This is tes');
+    System.debug('This is test ');
   }
   //* For LWC Map
   @AuraEnabled(cacheable = true)
